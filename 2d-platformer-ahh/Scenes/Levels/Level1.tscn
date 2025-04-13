@@ -219,7 +219,7 @@ terrain_set_0/terrain_0/color = Color(0.0475307, 0.23205, 1, 1)
 sources/6 = SubResource("TileSetAtlasSource_36ke7")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_riv1q"]
-resource_name = "Front"
+resource_name = "<null>"
 texture = ExtResource("1_36ke7")
 0:0/0 = 0
 0:0/0/terrain_set = 0
