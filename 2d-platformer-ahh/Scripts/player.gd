@@ -10,6 +10,7 @@ var direction = 0
 var right = true
 var left = false
 
+
 @export var coyote_time := 0.15
 var coyote_timer := 0.0
 
