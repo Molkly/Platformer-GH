@@ -6,7 +6,15 @@ class_name PlayerController
 @export var wall_jump_vertical_power := 9.0
 @export var wall_jump_horizontal_power := 100.0
 @export var max_wall_slide_speed := 30.0
+@export var dash_speed := 400.0
+@export var dash_time := 0.15
+@export var dash_cooldown := 0.1
 
+var has_dashed := false
+var is_dashing := false
+var dash_timer := 0.0
+var can_dash := true
+var dash_direction := Vector2.ZERO
 var speed_multiplier = 30.0
 var jump_multiplier = -30.0
 var direction = 0
@@ -26,7 +34,6 @@ var current_wall_direction := 0
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
 	# Input direction
 	direction = Input.get_axis("Move_Left", "Move_Right")
 	if direction == 1:
@@ -90,5 +97,39 @@ func _physics_process(delta: float) -> void:
 		set_collision_mask_value(2, false)
 	else:
 		set_collision_mask_value(2, true)
+
+	# Dash input
+	if Input.is_action_just_pressed("Dash") and can_dash and not has_dashed:
+		is_dashing = true
+		has_dashed = true
+		can_dash = false
+		dash_timer = dash_time
+	
+	# Get dash direction: horizontal/vertical or diagonal
+		var x_input := Input.get_action_strength("Move_Right") - Input.get_action_strength("Move_Left")
+		var y_input := Input.get_action_strength("Down") - Input.get_action_strength("Up")
+		dash_direction = Vector2(x_input, y_input)
+
+		if dash_direction == Vector2.ZERO:
+			dash_direction = Vector2(direction, 0)
+		else:
+			dash_direction = dash_direction.normalized()
+
+		velocity = dash_direction * dash_speed
+
+	if abs(dash_direction.y) > 0:
+		dash_direction.y *= 0.9
+# Dashing behavior
+	if is_dashing:
+		dash_timer -= delta
+		velocity = dash_direction * dash_speed  # lock velocity
+		if dash_timer <= 0.0:
+			is_dashing = false
+			
+	if is_on_floor() and not is_dashing:
+		coyote_timer = coyote_time
+		can_dash = true
+		has_dashed = false
+		last_wall_direction = 0
 
 	move_and_slide()
