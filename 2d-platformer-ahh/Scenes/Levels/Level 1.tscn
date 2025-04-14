@@ -179,4 +179,4 @@ position = Vector2(975, -402)
 curve = SubResource("Curve2D_e57xo")
 
 [node name="CharacterBody2D" parent="." index="3"]
-position = Vector2(1230, -577)
+position = Vector2(-3, -48)
