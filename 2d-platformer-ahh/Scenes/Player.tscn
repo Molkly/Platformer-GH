@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ca4p5a43uu77h"]
+[gd_scene load_steps=15 format=3 uid="uid://dcxdl7sxtrojc"]
 
 [ext_resource type="Script" uid="uid://bq2pcnbipe45s" path="res://Scripts/player.gd" id="1_kyqiw"]
 [ext_resource type="Script" uid="uid://dbstl7nmk5dxc" path="res://Scripts/player_animation.gd" id="2_gntrk"]
@@ -174,8 +174,6 @@ height = 14.0406
 [node name="CharacterBody2D" type="CharacterBody2D"]
 collision_mask = 6
 script = ExtResource("1_kyqiw")
-speed = 100.0
-jump_power = 9.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(0, -8)

@@ -1,8 +1,8 @@
 extends CharacterBody2D
 class_name PlayerController
 
-@export var speed = 85.0
-@export var jump_power = 7.0
+@export var speed = 100
+@export var jump_power = 9.0
 @export var wall_jump_vertical_power := 9.0
 @export var wall_jump_horizontal_power := 100.0
 @export var max_wall_slide_speed := 30.0
