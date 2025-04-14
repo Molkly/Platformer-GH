@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="2D platformer ahh"
-run/main_scene="uid://cb1cdefi1xsbv"
+run/main_scene="uid://imeunawv4p10"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://Assests/misc/icon.svg"
+
+[autoload]
+
+GameManager="*res://Scripts/game_manager.gd"
 
 [display]
 
@@ -47,6 +51,7 @@ Down={
 2d_physics/layer_1="player"
 2d_physics/layer_2="one_way"
 2d_physics/layer_3="ground"
+2d_physics/layer_4="transitions"
 
 [rendering]
 

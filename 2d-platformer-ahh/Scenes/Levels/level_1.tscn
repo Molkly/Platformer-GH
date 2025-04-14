@@ -1,11 +1,11 @@
-[gd_scene load_steps=12 format=4 uid="uid://imeunawv4p10"]
+[gd_scene load_steps=14 format=4 uid="uid://imeunawv4p10"]
 
-[ext_resource type="PackedScene" uid="uid://cb1cdefi1xsbv" path="res://Scenes/area_template.tscn" id="1_qv0vd"]
-[ext_resource type="PackedScene" uid="uid://b6yqqy2o52r5l" path="res://Scenes/moving_platform.tscn" id="2_4t3b5"]
-[ext_resource type="Texture2D" uid="uid://pvlmhmayybbi" path="res://Assests/Tilesets/tiles_1.png" id="2_vnbq0"]
+[ext_resource type="PackedScene" uid="uid://cb1cdefi1xsbv" path="res://Scenes/area_template.tscn" id="1_3mqfk"]
+[ext_resource type="Texture2D" uid="uid://pvlmhmayybbi" path="res://Assests/Tilesets/tiles_1.png" id="2_iixi8"]
+[ext_resource type="PackedScene" uid="uid://b6yqqy2o52r5l" path="res://Scenes/moving_platform.tscn" id="3_cyadu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vnbq0"]
-texture = ExtResource("2_vnbq0")
+texture = ExtResource("2_iixi8")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -52,7 +52,7 @@ sources/0 = SubResource("TileSetAtlasSource_vnbq0")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o22s6"]
 resource_name = "foreground"
-texture = ExtResource("2_vnbq0")
+texture = ExtResource("2_iixi8")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -119,6 +119,22 @@ _data = {
 }
 point_count = 3
 
+[sub_resource type="Curve2D" id="Curve2D_d80xo"]
+resource_local_to_scene = true
+bake_interval = 0.01
+_data = {
+"points": PackedVector2Array(-0.239392, -40.6966, 0.239392, 40.6966, 1054, -345, -0.627427, 40.6863, 0.627427, -40.6863, 992, -348, -0.732421, -48.9881, 0.732421, 48.9881, 1054, -345)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_gk1sg"]
+resource_local_to_scene = true
+bake_interval = 0.01
+_data = {
+"points": PackedVector2Array(-0.239392, -40.6966, 0.239392, 40.6966, 1054, -345, -0.627427, 40.6863, 0.627427, -40.6863, 992, -348, -0.732421, -48.9881, 0.732421, 48.9881, 1054, -345)
+}
+point_count = 3
+
 [sub_resource type="Curve2D" id="Curve2D_e57xo"]
 resource_local_to_scene = true
 _data = {
@@ -126,7 +142,7 @@ _data = {
 }
 point_count = 1
 
-[node name="Level 1" instance=ExtResource("1_qv0vd")]
+[node name="Level 1" instance=ExtResource("1_3mqfk")]
 
 [node name="ColorRect" type="ColorRect" parent="." index="0"]
 offset_left = -236.0
@@ -148,35 +164,38 @@ tile_map_data = PackedByteArray("AAABAP//AAABAAEAAAABAP7/AAABAAEAAAABAP3/AAABAAA
 [node name="ForeGround" parent="Tiles" index="3"]
 tile_set = SubResource("TileSet_nytic")
 
-[node name="moving_platform" parent="MovingPlatforms" index="0" instance=ExtResource("2_4t3b5")]
+[node name="moving_platform" parent="MovingPlatforms" index="0" instance=ExtResource("3_cyadu")]
 curve = SubResource("Curve2D_vnbq0")
 path_time = 2.0
 looping = true
 
-[node name="moving_platform2" parent="MovingPlatforms" index="1" instance=ExtResource("2_4t3b5")]
+[node name="moving_platform2" parent="MovingPlatforms" index="1" instance=ExtResource("3_cyadu")]
 position = Vector2(344.235, -214.273)
 curve = SubResource("Curve2D_nytic")
 looping = true
 
-[node name="moving_platform3" parent="MovingPlatforms" index="2" instance=ExtResource("2_4t3b5")]
+[node name="moving_platform3" parent="MovingPlatforms" index="2" instance=ExtResource("3_cyadu")]
 position = Vector2(-1, -21)
 curve = SubResource("Curve2D_o22s6")
 transition = 0
 
-[node name="moving_platform6" parent="MovingPlatforms" index="3" instance=ExtResource("2_4t3b5")]
+[node name="moving_platform6" parent="MovingPlatforms" index="3" instance=ExtResource("3_cyadu")]
 position = Vector2(2, -155)
-curve = SubResource("Curve2D_o22s6")
+curve = SubResource("Curve2D_d80xo")
 path_time = 1.5
 transition = 0
 
-[node name="moving_platform5" parent="MovingPlatforms" index="4" instance=ExtResource("2_4t3b5")]
+[node name="moving_platform5" parent="MovingPlatforms" index="4" instance=ExtResource("3_cyadu")]
 position = Vector2(6, -89)
-curve = SubResource("Curve2D_o22s6")
+curve = SubResource("Curve2D_gk1sg")
 transition = 0
 
-[node name="moving_platform4" parent="MovingPlatforms" index="5" instance=ExtResource("2_4t3b5")]
+[node name="moving_platform4" parent="MovingPlatforms" index="5" instance=ExtResource("3_cyadu")]
 position = Vector2(975, -402)
 curve = SubResource("Curve2D_e57xo")
 
-[node name="CharacterBody2D" parent="." index="3"]
+[node name="LevelExit" parent="." index="3"]
+position = Vector2(766, -683)
+
+[node name="CharacterBody2D" parent="." index="4"]
 position = Vector2(-3, -48)

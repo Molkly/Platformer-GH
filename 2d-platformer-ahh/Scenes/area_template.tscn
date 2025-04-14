@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=4 uid="uid://cb1cdefi1xsbv"]
+[gd_scene load_steps=12 format=4 uid="uid://cb1cdefi1xsbv"]
 
 [ext_resource type="Texture2D" uid="uid://pvlmhmayybbi" path="res://Assests/Tilesets/tiles_1.png" id="1_55tdv"]
 [ext_resource type="PackedScene" uid="uid://ca4p5a43uu77h" path="res://Scenes/player.tscn" id="2_lb22j"]
+[ext_resource type="PackedScene" uid="uid://k7y24ity8yku" path="res://Scenes/level_exit.tscn" id="2_w7x0g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w7x0g"]
 texture = ExtResource("1_55tdv")
@@ -537,6 +538,9 @@ tile_set = SubResource("TileSet_xvio3")
 tile_set = SubResource("TileSet_w7x0g")
 
 [node name="MovingPlatforms" type="Node2D" parent="."]
+
+[node name="LevelExit" parent="." instance=ExtResource("2_w7x0g")]
+position = Vector2(40, -57)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_lb22j")]
 position = Vector2(0, -48)
