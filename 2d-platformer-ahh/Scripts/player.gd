@@ -9,6 +9,11 @@ class_name PlayerController
 @export var dash_speed := 400.0
 @export var dash_time := 0.15
 @export var dash_cooldown := 0.1
+@export var background_color := Color(1, 0, 0)
+@export var coyote_time := 0.15
+@export var wall_coyote_time := .2
+
+@onready var color_rect = $ColorRect
 
 var has_dashed := false
 var is_dashing := false
@@ -21,8 +26,6 @@ var direction = 0
 var right = true
 var left = false
 
-@export var coyote_time := 0.15
-@export var wall_coyote_time := .2
 
 var coyote_timer := 0.0
 var wall_coyote_timer := 0.0
@@ -30,6 +33,9 @@ var wall_coyote_timer := 0.0
 var is_wall_sliding := false
 var last_wall_direction := 0  # -1 = left wall, 1 = right wall, 0 = none
 var current_wall_direction := 0
+
+func _ready() -> void:
+	color_rect.color = background_color
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():

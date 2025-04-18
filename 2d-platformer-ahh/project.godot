@@ -18,7 +18,7 @@ config/icon="res://Assests/misc/icon.svg"
 [autoload]
 
 GameManager="*res://Scripts/game_manager.gd"
-SceneTransition="*res://Scripts/scene_transition.tscn"
+SceneTransition="*res://Scenes/scene_transition.tscn"
 
 [display]
 

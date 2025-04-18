@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://y510wuwe2bpx"]
 
-[ext_resource type="Script" uid="uid://dwmvvbqr8rjff" path="res://Scripts/scene_transition.gd" id="1_18nkq"]
+[ext_resource type="Script" uid="uid://dwmvvbqr8rjff" path="res://Scripts/scene_transition.gd" id="1_crfs3"]
 
 [sub_resource type="Animation" id="Animation_6q84k"]
 resource_name = "RESET"
@@ -41,7 +41,7 @@ _data = {
 }
 
 [node name="scene_transition" type="CanvasLayer"]
-script = ExtResource("1_18nkq")
+script = ExtResource("1_crfs3")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../trans_rect")

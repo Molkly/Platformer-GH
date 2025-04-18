@@ -522,6 +522,9 @@ sources/0 = SubResource("TileSetAtlasSource_atlku")
 
 [node name="area_template" type="Node2D"]
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+autoplay = true
+
 [node name="Tiles" type="Node2D" parent="."]
 
 [node name="BackGround" type="TileMapLayer" parent="Tiles"]
@@ -537,10 +540,11 @@ tile_set = SubResource("TileSet_xvio3")
 [node name="ForeGround" type="TileMapLayer" parent="Tiles"]
 tile_set = SubResource("TileSet_w7x0g")
 
-[node name="MovingPlatforms" type="Node2D" parent="."]
+[node name="Platforms" type="Node2D" parent="."]
 
 [node name="LevelExit" parent="." instance=ExtResource("2_w7x0g")]
 position = Vector2(40, -57)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_lb22j")]
 position = Vector2(0, -48)
+background_color = Color(0.0823529, 0.0666667, 0.145098, 1)

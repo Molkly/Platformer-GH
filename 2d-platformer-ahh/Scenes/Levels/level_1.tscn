@@ -1,8 +1,10 @@
-[gd_scene load_steps=14 format=4 uid="uid://imeunawv4p10"]
+[gd_scene load_steps=15 format=4 uid="uid://imeunawv4p10"]
 
 [ext_resource type="PackedScene" uid="uid://cb1cdefi1xsbv" path="res://Scenes/area_template.tscn" id="1_3mqfk"]
+[ext_resource type="AudioStream" uid="uid://c4kdm0oqck32s" path="res://Sound & Music/waaawaa Edit 1 Export 1.mp3" id="2_cyadu"]
 [ext_resource type="Texture2D" uid="uid://pvlmhmayybbi" path="res://Assests/Tilesets/tiles_1.png" id="2_iixi8"]
 [ext_resource type="PackedScene" uid="uid://b6yqqy2o52r5l" path="res://Scenes/moving_platform.tscn" id="3_cyadu"]
+[ext_resource type="PackedScene" uid="uid://kjpsusww0acd" path="res://Scenes/Platform.tscn" id="4_iixi8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vnbq0"]
 texture = ExtResource("2_iixi8")
@@ -135,21 +137,12 @@ _data = {
 }
 point_count = 3
 
-[sub_resource type="Curve2D" id="Curve2D_e57xo"]
-resource_local_to_scene = true
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0)
-}
-point_count = 1
-
 [node name="Level 1" instance=ExtResource("1_3mqfk")]
 
-[node name="ColorRect" type="ColorRect" parent="." index="0"]
-offset_left = -236.0
-offset_top = -921.0
-offset_right = 1519.0
-offset_bottom = 61.0
-color = Color(0.0837278, 0.06586, 0.14552, 1)
+[node name="AudioStreamPlayer" parent="." index="0"]
+stream = ExtResource("2_cyadu")
+volume_db = -20.0
+parameters/looping = true
 
 [node name="BackGround" parent="Tiles" index="0"]
 tile_map_data = PackedByteArray("AABEAOT/AAAAAAUAAABEAOX/AAAAAAUAAABEAOb/AAAAAAUAAABEAOf/AAAAAAUAAABEAOj/AAAAAAUAAABEAOn/AAAAAAUAAABFAOT/AAACAAUAAABFAOX/AAACAAUAAABFAOb/AAACAAUAAABFAOf/AAACAAUAAABFAOj/AAACAAUAAABFAOn/AAACAAUAAAA=")
@@ -164,35 +157,34 @@ tile_map_data = PackedByteArray("AAABAP//AAABAAEAAAABAP7/AAABAAEAAAABAP3/AAABAAA
 [node name="ForeGround" parent="Tiles" index="3"]
 tile_set = SubResource("TileSet_nytic")
 
-[node name="moving_platform" parent="MovingPlatforms" index="0" instance=ExtResource("3_cyadu")]
+[node name="MovingPlatforms#moving_platform" parent="Platforms" index="0" instance=ExtResource("3_cyadu")]
 curve = SubResource("Curve2D_vnbq0")
 path_time = 2.0
 looping = true
 
-[node name="moving_platform2" parent="MovingPlatforms" index="1" instance=ExtResource("3_cyadu")]
+[node name="MovingPlatforms#moving_platform2" parent="Platforms" index="1" instance=ExtResource("3_cyadu")]
 position = Vector2(344.235, -214.273)
 curve = SubResource("Curve2D_nytic")
 looping = true
 
-[node name="moving_platform3" parent="MovingPlatforms" index="2" instance=ExtResource("3_cyadu")]
+[node name="MovingPlatforms#moving_platform3" parent="Platforms" index="2" instance=ExtResource("3_cyadu")]
 position = Vector2(-1, -21)
 curve = SubResource("Curve2D_o22s6")
 transition = 0
 
-[node name="moving_platform6" parent="MovingPlatforms" index="3" instance=ExtResource("3_cyadu")]
+[node name="MovingPlatforms#moving_platform6" parent="Platforms" index="3" instance=ExtResource("3_cyadu")]
 position = Vector2(2, -155)
 curve = SubResource("Curve2D_d80xo")
 path_time = 1.5
 transition = 0
 
-[node name="moving_platform5" parent="MovingPlatforms" index="4" instance=ExtResource("3_cyadu")]
+[node name="MovingPlatforms#moving_platform5" parent="Platforms" index="4" instance=ExtResource("3_cyadu")]
 position = Vector2(6, -89)
 curve = SubResource("Curve2D_gk1sg")
 transition = 0
 
-[node name="moving_platform4" parent="MovingPlatforms" index="5" instance=ExtResource("3_cyadu")]
-position = Vector2(975, -402)
-curve = SubResource("Curve2D_e57xo")
+[node name="StaticPlatform1" parent="Platforms" index="5" instance=ExtResource("4_iixi8")]
+position = Vector2(974, -405)
 
 [node name="LevelExit" parent="." index="3"]
 position = Vector2(766, -683)

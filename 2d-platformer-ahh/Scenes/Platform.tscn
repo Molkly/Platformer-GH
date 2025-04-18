@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://kjpsusww0acd"]
+
+[ext_resource type="Texture2D" uid="uid://llegv336dchd" path="res://Assests/misc/platform1_large.png" id="1_kjout"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_18sq8"]
+size = Vector2(32, 4)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+disable_mode = 1
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_kjout")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_18sq8")
+one_way_collision = true

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c4kdm0oqck32s"
+path="res://.godot/imported/waaawaa Edit 1 Export 1.mp3-fc9d8caffe62778c4133dbd7b6085eae.mp3str"
+
+[deps]
+
+source_file="res://Sound & Music/waaawaa Edit 1 Export 1.mp3"
+dest_files=["res://.godot/imported/waaawaa Edit 1 Export 1.mp3-fc9d8caffe62778c4133dbd7b6085eae.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
