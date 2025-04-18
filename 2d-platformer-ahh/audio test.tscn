@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ba3555bliwyv1"]
+
+[ext_resource type="AudioStream" uid="uid://csol4bk6k3nxe" path="res://Sound & Music/Retro Ambience 02.wav" id="1_nhb5y"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_nhb5y")
+volume_db = -33.528
+pitch_scale = 2.26
+autoplay = true

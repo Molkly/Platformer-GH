@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dyunm5n80tlrl"
+path="res://.godot/imported/stepping grass.wav-09eaf8f98782dc6d42c2cbfdbe49355c.sample"
+
+[deps]
+
+source_file="res://Sound & Music/stepping grass.wav"
+dest_files=["res://.godot/imported/stepping grass.wav-09eaf8f98782dc6d42c2cbfdbe49355c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://em46sbkoxwbi"
+path="res://.godot/imported/stepping 1.wav-ab2dd92a98a9710c2c89196578629815.sample"
+
+[deps]
+
+source_file="res://Sound & Music/stepping 1.wav"
+dest_files=["res://.godot/imported/stepping 1.wav-ab2dd92a98a9710c2c89196578629815.sample"]
+
+[params]
+
+force/8_bit=true
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

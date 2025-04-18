@@ -1,8 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://dcxdl7sxtrojc"]
+[gd_scene load_steps=21 format=3 uid="uid://dcxdl7sxtrojc"]
 
 [ext_resource type="Script" uid="uid://bq2pcnbipe45s" path="res://Scripts/player.gd" id="1_kyqiw"]
+[ext_resource type="AudioStream" uid="uid://0ltat6vkolgb" path="res://Sound & Music/jump 1.wav" id="2_3smsa"]
 [ext_resource type="Script" uid="uid://dbstl7nmk5dxc" path="res://Scripts/player_animation.gd" id="2_gntrk"]
 [ext_resource type="Texture2D" uid="uid://c14horen6vlbo" path="res://Assests/Creatures/robot animation test 1-Recovered.png" id="3_6t5aa"]
+[ext_resource type="AudioStream" uid="uid://cm1wwua33mpvd" path="res://Sound & Music/walljump 3.wav" id="3_f1ek2"]
+[ext_resource type="AudioStream" uid="uid://6munlhovet1g" path="res://Sound & Music/jump 2.wav" id="3_tx1dd"]
+[ext_resource type="AudioStream" uid="uid://q3quwibhcxq6" path="res://Sound & Music/Retro Impact Punch Hurt 01.wav" id="4_f1ek2"]
+[ext_resource type="AudioStream" uid="uid://b73qdbmm77gnp" path="res://Sound & Music/dash 1.wav" id="5_tx1dd"]
+[ext_resource type="AudioStream" uid="uid://csol4bk6k3nxe" path="res://Sound & Music/Retro Ambience 02.wav" id="6_8erm5"]
 
 [sub_resource type="Animation" id="Animation_dewec"]
 length = 0.001
@@ -174,6 +180,16 @@ height = 14.0406
 [node name="CharacterBody2D" type="CharacterBody2D"]
 collision_mask = 6
 script = ExtResource("1_kyqiw")
+sfx_jump = ExtResource("3_tx1dd")
+sfx_wall_jump = ExtResource("3_f1ek2")
+sfx_land = ExtResource("4_f1ek2")
+sfx_dash = ExtResource("5_tx1dd")
+sfx_wall_slide = ExtResource("6_8erm5")
+
+[node name="sfx" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_3smsa")
+max_polyphony = 3
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -1
@@ -211,7 +227,6 @@ region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, -6.84)
 scale = Vector2(0.97, 0.97)
 shape = SubResource("CapsuleShape2D_kpjcp")

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://csol4bk6k3nxe"
+path="res://.godot/imported/Retro Ambience 02.wav-5caebea7ea747e5dcae833cf463acfca.sample"
+
+[deps]
+
+source_file="res://Sound & Music/Retro Ambience 02.wav"
+dest_files=["res://.godot/imported/Retro Ambience 02.wav-5caebea7ea747e5dcae833cf463acfca.sample"]
+
+[params]
+
+force/8_bit=true
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

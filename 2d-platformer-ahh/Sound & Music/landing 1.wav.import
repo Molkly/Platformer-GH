@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ccp5bpuxxsnmx"
+path="res://.godot/imported/landing 1.wav-08db8cea78896784eb7e31df3ba84826.sample"
+
+[deps]
+
+source_file="res://Sound & Music/landing 1.wav"
+dest_files=["res://.godot/imported/landing 1.wav-08db8cea78896784eb7e31df3ba84826.sample"]
+
+[params]
+
+force/8_bit=true
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

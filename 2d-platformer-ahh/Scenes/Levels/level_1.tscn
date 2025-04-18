@@ -141,7 +141,7 @@ point_count = 3
 
 [node name="AudioStreamPlayer" parent="." index="0"]
 stream = ExtResource("2_cyadu")
-volume_db = -20.0
+volume_db = -30.307
 parameters/looping = true
 
 [node name="BackGround" parent="Tiles" index="0"]
